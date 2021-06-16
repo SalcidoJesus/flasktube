@@ -7,11 +7,26 @@
     <title>Descargador de videos de youtube</title>
 </head>
 <body>
-    <h2>{{ filetitle }}</h2>
-    <form action="{{ url_for('descargar_video') }}" method="post">
-        <input type="hidden" value="{{ filepath }}" name="filepath">
+    <h1>descargador de cosas de youtube</h1>
+    <br>
+    <form action="{{ url_for('ver_video') }}" method="POST">
+        <h3>{{ url.title }}</h3>
         <br>
-        <input type="submit" value="Descargar">
+        <select name="itag">
+            {% for i in url.streams %}
+                <option value="{{ i.itag }}">
+                    {{ i.mime_type }} {{ i.resolution }}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Descargar" onclick="show()">
     </form>
+    <div id="show"></div>
+    <script>
+        function show() {
+            var container = document.getElementById('show')
+            container.innerHTML = "El video será descargado a la brevedad."
+        }
+    </script>
 </body>
 </html>

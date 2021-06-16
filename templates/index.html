@@ -10,8 +10,8 @@
     
     <h1>No manchen genteee!!! Jesusito presentaaa <b>el descargador de vidios de youtubeee :o</b> si, ya hay en México </h1>
 
-    <form action="" method="post">
-        <input type="text" placeholder="Pon el link owo" name="url">
+    <form action="{{ url_for('index') }}" method="post">
+        <input type="text" placeholder="Pon el link owo" name="url" required>
         <br>
         <input type="submit" value="Descargar owo">
     </form>
