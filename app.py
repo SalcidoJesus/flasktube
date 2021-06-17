@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect, send_file, session
 from pytube import YouTube
 from os import remove, path
-
+# $env:FLASK_ENV = "development"
 app = Flask(__name__)
+app.debug = True
 app.config['SECRET_KEY'] = "HolaGente"
 
 """
